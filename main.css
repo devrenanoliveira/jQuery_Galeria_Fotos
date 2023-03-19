@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+header {
+    background-color: rgb(76, 43, 226);
+    padding: 16px 0;
+    color: white;
+    display: flex;
+    border-bottom: 16px solid rgb(53, 10, 207);
+    justify-content: center;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+header button {
+    margin-left: 16px;
+}
+
+form {
+    background-color: rgb(209, 207, 207);
+    padding: 24px 0;
+    text-align: center;
+    display: none; /* aqui deixamos em "none" para fazer o formulário desaparecer e somente aparecer quando clicarmos em nova imagem, usando o jQuery */
+}
+
+form h2 {
+    margin-bottom: 16px;
+}
+
+input, button {
+    padding: 8px;
+
+}
+
+button {
+    background-color: green;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+#botao-cancelar {
+    background-color: red;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap; /*quando chegar ao final da página, cria uma nova linha */
+}
+
+ul li {
+    max-width: 25%;
+    list-style: none; /*remove os dots da lista */
+    position: relative; /* faz com que o texto se posicione corretamente abaixo das imagens */
+    max-height: 280px; /* limita a altura máxima do elemento */
+    overflow-y: hidden; /* complementa o "max-height", dizendo que, tudo o que ultrapassar o eixo y (vertical) dentro do limite de altura, ficará invisível */
+}
+
+ul li img {
+    width: 100%; /*ajuste do tamanho das imagens para deixar padronizado*/
+}
+
+.overlay-imagem-link {
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute; /* posiciona no canto inferior */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0; /* determina o nível de transparência. No caso, deixamos zero para fazer com que não apareça, somente quando o mouse passar por cima, usando a propriedade do ul li:hover .overlay-imagem-link - opacity: 1 */
+    transition: all ease .5s; /*adiciona uma animação para aparecer a opção de "ver imagem em tamanho real" */
+}
+
+.overlay-imagem-link a {
+    color: white;
+    text-decoration: none; /* remove o underline do link */
+}
+
+ul li:hover .overlay-imagem-link {
+    opacity: 1;
+}
